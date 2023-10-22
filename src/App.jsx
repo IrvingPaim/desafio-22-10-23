@@ -2,17 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import '../css/date-counter.css'
+import { AppCounter } from './components/AppCounter'
 
 function App() {
 	return (
 		<>
-			<div>
-				<button></button>
-				<h1>Hoje é Domingo, 22 de out. de 2023</h1>
-				<button></button>
-			</div>
+        <AppCounter />
 		</>
 	)
 }
+
+const container = document.querySelector('[data-js="root"]')
+const born = ReactDOM.createRoot(container)
+born.render(<App />)
 
 export default App
