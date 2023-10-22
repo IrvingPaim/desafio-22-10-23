@@ -1,170 +1,208 @@
-# Bateria de Desafios 01
+# Bateria de Desafios 02
 
-No decorrer desta bateria de desafios, quando houver código envolvido por 3 crases, ignore as crases e considere apenas o código dentro delas. 
+Implemente os desafios abaixo usando uma cópia do boilerplate que fizemos com Vite em aulas passadas. 
 
-As crases são apenas uma forma de escrever blocos de código com syntax-highlight (colorido) em arquivos markdown (.md), como este.
+Implemente suas resoluções no app.jsx.
+
+A marcação CSS a ser usada em cada desafio está na pasta css.
+
+As imagens com o resultado final das interfaces que você implementará estão na pasta ui-examples. 
+
+Se o desafio não especificar como você deve "quebrar" a interface em diferentes componentes, isso fica a seu critério.
+
+Provavelmente, as suas resoluções dos desafios serão usadas futuramente. Portanto, se organize de forma que cada código que você implementou nesta bateria esteja salvo para usar no futuro. 
+
+Se a descrição do desafio não especificou "como" fazer, descobrir é parte do desafio.
+
+Se nas aulas não foi mostrado "como" fazer, descobrir é parte do desafio.
 
 ---
 
+
 # Desafio 01
 
-Crie um index.html dentro desta pasta. 
+Implemente o 01-contador-de-data.jpg. 
 
-Crie uma estrutura HTML básica nele e execute-o no navegador. 
+O CSS dessa interface está no arquivo date-counter.css.
 
-Insira nele os scripts pra que você use React e escreva JSX. 
+Ao clicar no botão "-" ao lado de Intervalo: 1, exiba no console a mensagem "Clicou no menos do Intervalo".
 
-No body, crie uma tag script para começar a escrever código React. 
+Ao clicar no botão "-" ao lado de Contagem: 0, exiba no console a mensagem "Clicou no menos da Contagem".
 
-Dentro da tag script, insira o código que possibilita renderizar componentes na tela.
+Ao clicar no botão "+" ao lado de Intervalo: 1, exiba no console a mensagem "Clicou no mais do Intervalo".
+
+Ao clicar no botão "+" ao lado de Contagem: 0, exiba no console a mensagem "Clicou no mais da Contagem".
+
+Futuramente, a forma que essa aplicação irá funcionar será explicada.
 
 ---
 
 # Desafio 02
 
-Crie um componente App. 
+Implemente o 02-passos.jpg. 
 
-Faça o componente App retornar o JSX abaixo. 
+O CSS está no arquivo steps.css.
 
-```jsx
-<>
-  <a id="thumbnail" href="https://youtu.be/_1zSGZTu6io?si=7n_2Imhr3MVV50hf">
-    <div id="overlays">
-      <span id="overlay-text" class="style-scope ytd-thumbnail-overlay-now-playing-renderer">Now playing</span>
-    </div>
-  </a>
-</>
-```
+Ao clicar nos botões Fechar, Anterior e Próximo, o texto do botão clicado deve ser exibido no console. 
 
-Renderize o componente App na tela.
-
-Leia a mensagem do erro no console. 
-
-Faça a modificação necessária para que o erro não seja mais exibido.
+Não escreva o texto do botão manualmente em seus console.log. Use as propriedades específicas para isso. 
 
 ---
 
 # Desafio 03
 
-Limpe todo o JSX que o seu App está retornando.
+Implemente o 03-flashcards.jpg. 
 
-Faça ele retornar o JSX abaixo.
+Use o array abaixo para preencher os cards com informações. 
 
-```jsx
-<h1 style={color: 'lightblue'}>Burgão do Zé</h1>
+Quando um card for clicado, o id do card deve ser exibido no console. 
+
+Não faça cardsInfo[index] para exibir o id do card no console. 
+
+O console.log não deve ser inserido diretamente na propriedade onClick. Declare uma função acima do retorno do componente e use o console.log nela. 
+
+```js
+const cardsInfo = [
+  {
+    id: 7336,
+    question: "Do quê aplicações React são feitas?",
+    answer: "Componentes",
+  },
+  {
+    id: 8832,
+    question: "Qual é o nome da sintaxe usada para descrever UI no React?",
+    answer: "JSX",
+  },
+  {
+    id: 3457,
+    question: "Em qual linguagem o React é baseado?",
+    answer: "JavaScript",
+  },
+  {
+    id: 9103,
+    question: "Qual método usar para renderizar uma lista no React?",
+    answer: "map",
+  },
+  {
+    id: 1297,
+    question: "Qual empresa criou o React?",
+    answer: "Meta",
+  },
+  {
+    id: 2002,
+    question: "Como passar informações para um componente React?",
+    answer: "Através de props",
+  },
+]
 ```
-
-Renderize o componente App.
-
-Faça a modificação necessária para que o erro no console não seja mais exibido.
 
 ---
 
 # Desafio 04
 
-Faça o seu App retornar o JSX abaixo.
-
-```jsx
-<h1>Burgão do Zé</h1>
-<p>🎯 Promo toda quarta e quinta</p>
-```
-
-Dependendo de como esse JSX foi retornado, haverá um erro no console.
-
-Leia a mensagem do erro.
-
-Faça a modificação necessária para que o erro não seja mais exibido.
+Baseado no que você viu nas aulas dessa semana, melhore a lista de habilidades do card feito na Bateria de Desafios anterior. 
 
 ---
 
 # Desafio 05
 
-Limpe todo o JSX que o seu App está retornando.
+Implemente o 04-accordion.jpg. 
 
-Insira o componente abaixo acima da declaração do seu App.
+Use o array abaixo para preencher a interface com informações. 
 
-```jsx
-const Product = ({ img, name, description, price }) => (
-  <div className="product">
-    <img src={img} alt={name} />
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <h4>R$ {price}</h4>
-  </div>
-)
+```js
+const faqs = [
+  {
+    id: crypto.randomUUID(),
+    title: "Quem é a maior celebridade do mundo dos games no BR?",
+    answer: "A apresentadora Ana Maria Braga. Joga 3h pra desocupar a cabeça.",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Onde fica a europa da américa do sul?",
+    answer: "Argentina. BR vive como rei em Buenos Aires.",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "Qual é a grande oportunidade para desenvolvedores BR?",
+    answer: "Aproveitar a alta demanda pra ganhar em dólar ou euro.",
+  },
+]
 ```
-
-Faça o seu App retornar 2 produtos diferentes. 
-
-Use informações de produtos da Amazon como props.
 
 ---
 
 # Desafio 06
 
-Delete a declaração do componente Product.
+Implemente o 05-burgao-do-ze.jpg.
 
-Faça o seu App retornar os 2 componentes abaixo.
+O logo e as imagens dos burgers estão na pasta img.
 
-```jsx
-<Message role="assistant" content="O trabalho do programador é transformar café em código?" />
-<Message role="human" content="Não. É gerar valor." />
+O componente App deve conter os componentes Header, Menu e Footer.
+
+O cardápio só deve ser renderizado se houver itens no array burgers (abaixo).
+
+O texto abaixo do título "Cardápio" é: "Depois de uma semana desafiadora, nada melhor do que saborear um burger onde cada mordida é um abraço saboroso, não é mesmo?🍔✨".
+
+O hamburger "Prime" no jpg da interface é um exemplo de como o hamburger deve ser renderizado caso tenha esgotado. 
+
+Se a aplicação for acessada entre meio-dia e 21:59h, o rodapé deve exibir "🕛 Tamo aberto até as 22h. Vem visitar a gente ou faça seu pedido online." + o botão Fazer pedido.
+
+Ao clicar no botão Fazer pedido, a mensagem abaixo deve ser exibida no console:
+
+"Direcionando para fazer pedido..."
+
+Se a aplicação for acessada fora do horário comercial da hamburgueria, o rodapé deve exibir apenas a mensagem "🕛 Vamo abrir amanhã as 12h".
+
+```js
+const burgers = [
+  {
+    name: "Duo",
+    ingredients:
+      "Pão selado na manteiga, hambúrguer BOVINO de 160gr, cheddar, cebola caramelizada e molho especial",
+    price: 37,
+    photoName: "img/burgers/duo.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Kids",
+    ingredients:
+      "Burger de blend de cogumelos e mandioca, abacaxi caramelizado, muçarela, alface, tomate e molho verde",
+    price: 29,
+    photoName: "img/burgers/kids.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Master",
+    ingredients:
+      "Pão selado na manteiga, hambúrguer BOVINO de 100gr, bacon, cheddar e barbecue",
+    price: 51,
+    photoName: "img/burgers/master.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Monster",
+    ingredients:
+      "Pão selado na manteiga, 2x hambúrguer BOVINO de 100gr, bacon, cheddar e barbecue",
+    price: 47,
+    photoName: "img/burgers/monster.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Prime",
+    ingredients:
+      "Pão selado na manteiga, hambúrguer de CARNE DE SOL de 160gr, queijo coalho, bacon, alface, tomate, cebola roxa e melaço de cana",
+    price: 43,
+    photoName: "img/burgers/prime.jpg",
+    soldOut: true,
+  },
+  {
+    name: "Slim",
+    ingredients:
+      "Pão selado na manteiga, hambúrguer CUPIM de 180gr, 2 fatias de muçarela, alface, tomate, picles de cebola roxa e molho especial de alho",
+    price: 27,
+    photoName: "img/burgers/slim.jpg",
+    soldOut: false,
+  },
+]
 ```
-
-Declare o componente Message. 
-
-Faça o componente Message retornar o JSX descrito na estrutura abaixo.
-
-```
-div
-  div
-    img
-
-  div
-    p
-```
-
-O elemento img deve ter 3 atributos:
-
-1. src, recebendo uma verificação se role é assistant. Se for, src deve receber a imagem icon-bot.png. Caso contrário, deve receber a imagem icon-user.png. As imagens estão na pasta assets.
-
-2. alt, recebendo "Avatar do perfil".
-
-3. style ou class, para que a imagem fique com 40px.
-
-O parágrafo deve renderizar o valor de content.
-
----
-
-# Desafio 07
-
-Delete a declaração do componente Message.
-
-Faça o seu App retornar o JSX abaixo.
-
-```jsx
-<div className="card">
-  <Avatar />
-
-  <div className="info">
-    <Intro />
-    <ListOfSkills />
-  </div>
-</div>
-```
-
-O desafio é fazer um card idêntico ao card.jpg, dentro da pasta assets.
-
-O card deve ter informações sobre você.
-
-O CSS do card está disponível no arquivo style.css.
-
-Recomendações:
-
-As classes CSS criadas no style.css podem servir como "dicas" para ajudar a criar a marcação JSX.
-
-Crie um componente Skill que será usado para cada habilidade, dentro de ListOfSkills.
-
-O componente Skill recebe como props o nome da habilidade, o emoji e a cor de fundo. 
-
-O emoji de cada habilidade deve representar o quão bom você é nela: muito bom, ok ou ruim.
