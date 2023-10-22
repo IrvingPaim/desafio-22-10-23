@@ -1,13 +1,200 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bateria de Desafios 01</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>   
+</head>
+<body>
+    <div data-js="root"></div>
+
+    <script type="text/babel">
+         
+        //Desafio 01
+        /*
+        const heitor = (
+            <h1 data-js="title" id="title" className="title">
+                <span>Welcome, </span>
+                <strong>Heitor!</strong>
+            </h1>
+        )
+        const container = document.querySelector('[data-js="root"]')
+        const root = ReactDOM.createRoot(container)
+        root.render(heitor)
+        */
+        //Desafio 02
+        /*
+        const App = () => (
+            <>
+                <a id="thumbnail" href="https://youtu.be/_1zSGZTu6io?si=7n_2Imhr3MVV50hf">
+                    <div id="overlays">
+                        <span id="overlay-text" className="style-scope ytd-thumbnail-overlay-now-playing-renderer">Now playing</span>
+                    </div>
+                </a>
+            </>
+        )
+
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+        */
+        // Desafio 03
+        /*
+        const App = () => (
+            <h1 style={{color: 'lightblue'}}>Burgão do Zé</h1>
+        )
+
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+        */
+        //Desafio 04
+        /*
+        const App = () => (
+            <>
+                <h1>Burgão do Zé</h1>
+                <p>🎯 Promo toda quarta e quinta</p>
+            </>
+        )
+
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+        */
+        //Desafio 05
+        /*
+        const Product = ({ img, name, description, price }) => (
+            <div className="product">
+                <img src={img} alt={name} />
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <h4>R$ {price}</h4>
+            </div>
+        )
+
+        const App = () => (
+            <>
+                <Product 
+                    img="https://m.media-amazon.com/images/I/714sFk3poYL._AC_SX569_.jpg" 
+                    name="PC Gamer ITX Arena" 
+                    description="PC Gamer ITX Arena, Core i5 10400F, NVidia GeForce RTX 3050 8GB, Ram 16GB, SSD 240GB, Gabinete Gamer." 
+                    price="3999.00"
+                />
+                <Product 
+                    img="https://m.media-amazon.com/images/I/71zPxKNTjeL.__AC_SX300_SY300_QL70_ML2_.jpg" 
+                    name="Zombicide (2ª Edição)" 
+                    description="Galápagos, Zombicide (2ª Edição), Jogo de Tabuleiro Cooperativo, 1-6 jogadores, 30-60min" 
+                    price="729.99"
+                />
+            </>
+        )
+        
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+        */
+        //Desafio 06
+        /*
+        const Message = ({ role, content }) => {
+
+            const bot = "./assets/icon-bot.png"
+            const user = "./assets/icon-user.png"
+
+            return (
+                <div>
+                    <div>
+                        <img 
+                        src={role === "assistant" ? bot : user} 
+                        style={{ width: 40 }}
+                        alt="Avatar do perfil" />
+                    </div>
+                    <div>
+                        <p>{content}</p>
+                    </div>
+                </div>
+            )
+        }
+
+        const App = () => (
+            <>
+                <Message role="assistant" content="O trabalho do programador é transformar café em código?" />
+                <Message role="human" content="Não. É gerar valor." />
+            </>
+        )
+        
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+        */
+        //Desafio 07
+
+        const Avatar = () => {
+            return (
+                <>
+                    <img src="./assets/avatar1.jpg" className="avatar" alt="avatar" />
+                </>
+            )
+        }
+
+        const Intro = ({name, about}) => {
+            return (
+                <>
+                    <div>
+                        <h1>{name}</h1>
+                    </div>
+                    <div>
+                        <p>{about}</p>
+                    </div>
+                </>
+            )
+        }
+
+        const Skill = ({emoji, skill, classes}) => {
+            return (
+                <ul className="list-of-skills">
+                    <li className={classes}>{emoji} {skill}</li>
+                </ul>
+            )
+        }
+
+        const ListOfSkills = () => {
+            return (
+                <div className="list-of-skills">
+                    <Skill emoji="🤘🏻" skill="Programação" classes="bg-lightblue skill"/>
+                    <Skill emoji="👍🏻"skill="Inglês" classes="bg-pink skill"/>
+                    <Skill emoji="👎🏻" skill="Culinária" classes="bg-red skill"/>
+                    <Skill emoji="🤘🏻" skill="Piadas ruins" classes="bg-yellow skill"/>
+                    <Skill emoji="💪🏼🐍" skill="Estressar a Sogra" classes="bg-green skill"/>
+                    <Skill emoji="☢️☣️" skill="Contrariar a Esposa" classes="bg-purple skill"/>
+                </div>
+            )
+        }
+
+        const App = () => (
+            <div className="card">
+                <Avatar />
+
+                <div className="info">
+                    <Intro 
+                    name="Irving Paim"
+                    about="Sou um apaixonado por programação. Iniciei meus estudos em dezembro de 2021 e de lá para cá a vontade de aprender só aumenta. Gosto de rock, livros, praia, comida baiana com bastante dendê e coleciono board-games. Demorei um eternidade para completar este desafio por conta de uma lista infinita de questionamentos sobre dinossauros que esta figurinha da foto estava me passando!!! KKKK"
+                    />
+                    <ListOfSkills />
+                </div>
+            </div>
+        )
+        
+        const container = document.querySelector('[data-js="root"]')
+        const born = ReactDOM.createRoot(container)
+        born.render(<App />)
+
+
+
+                   
+    </script>
+</body>
 </html>
