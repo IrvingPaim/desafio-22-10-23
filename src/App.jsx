@@ -1,20 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import '../css/steps.css'
-import { AppPassos } from './components/AppPassos'
+import './index.css'
 
-function App() {
+const App = () => {
+	const handleClickMinusStep = () => console.log('Clicou no menos do Intervalo')
+	const handleClickMinusCount = () => console.log('Clicou no menos da Contagem')
+	const handleClickPlusStep = () => console.log('Clicou no mais do Intervalo')
+	const handleClickPlusCount = () => console.log('Clicou no mais da Contagem')
+
 	return (
-		<>
-        <AppPassos />
-		</>
+		<div className="container">
+			<div className="count">
+				<button onClick={handleClickMinusStep}>-</button>
+				<h2>Intervalo: 1</h2>
+				<button onClick={handleClickPlusStep}>+</button>
+			</div>
+
+			<div className="count">
+				<button onClick={handleClickMinusCount}>-</button>
+				<h2>Contagem: 0</h2>
+				<button onClick={handleClickPlusCount}>+</button>
+			</div>
+
+			<h2>Hoje é Domingo, 22 de out. de 2023</h2>
+		</div>
 	)
+
 }
 
-const container = document.querySelector('[data-js="root"]')
-const born = ReactDOM.createRoot(container)
-born.render(<App />)
-
-export default App
+export { App }
